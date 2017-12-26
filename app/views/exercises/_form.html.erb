@@ -1,0 +1,33 @@
+<%= form_with(model: exercise, local: true) do |form| %>
+
+  <% if exercise.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(exercise.errors.count, "error") %> prohibited this file from being saved:</h2>
+
+      <ul>
+      <% exercise.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="field">
+    <%= form.label :assignment %>
+    <%= form.text_field :assignment, id: :exercise_assignment %>
+  </div>
+
+  <div class="field">
+    <%= form.label :code %>
+    <%= form.text_area :code, id: :exercise_code %>
+  </div>
+
+  <div class="field">
+    <%= form.label :notes %>
+    <%= form.text_area :notes, id: :exercise_notes %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

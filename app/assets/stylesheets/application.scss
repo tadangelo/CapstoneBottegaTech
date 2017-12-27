@@ -1,1 +1,9 @@
 @import "bootstrap";
+
+.ruby_image {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	padding-right: 10px;
+	padding-top: 30px;
+}

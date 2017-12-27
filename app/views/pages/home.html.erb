@@ -2,36 +2,13 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Compile ruby from your browser</title>
-    <script src="http://cdn.opalrb.org/opal/current/opal.js"></script>
-    <script src="http://cdn.opalrb.org/opal/current/opal-parser.js"></script>
-    <script type="text/javascript">Opal.load('opal-parser')</script>
+    <title>Ruby Tutorial for Kids</title>
+
   </head>
   <body>
-    <h1>Input</h1>
-    <textarea id="input" rows="5" cols="50">
-      puts "hi"
-    </textarea>
-    <button id="compile" onclick="compile()">Compile!</button>
-
-    <h1>Output</h1>
-    <textarea id="output" rows="5" cols="50"></textarea>
-
-    <script src="js/opal.min.js"></script>
-    <script src="js/opal-parser.min.js"></script>
-    <script type="text/javascript">Opal.load('opal-parser')</script>
-    <script src="js/scripts.js"></script>
+    <div class="ruby_image">
+      <%= image_tag "ruby_image.jpg", width: 225, height: 225, alt: "Ruby Image"  %>
+    </div>
   </body>
-
-  <script type="text/javascript">
-  function compile() {
-  const input = document.getElementById("input");
-  const output = document.getElementById("output");
-
-  output.value = Opal.compile(input.value);
-  output.value = eval(input.value);
-}
-
-document.onload = function() { compile(); }
-  </script>
+    
 </html>

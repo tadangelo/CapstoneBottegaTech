@@ -1,3 +1,5 @@
+
+
 <p>
   <strong>Assignment:</strong>
   <%= @exercise.assignment %>
@@ -15,7 +17,7 @@
 
 <p>
   <strong>Date:</strong>
-  <%= Date.today %>
+  <%= @exercise.created_at.strftime("%b %d, %Y") %>
 </p>
 
 <%= link_to 'Edit', edit_exercise_path(@exercise) %> |

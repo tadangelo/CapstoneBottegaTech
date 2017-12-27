@@ -1,3 +1,4 @@
+
 <p id="notice"><%= notice %></p>
 
 <h1>Ruby Exercises</h1>
@@ -19,7 +20,7 @@
         <td><%= exercise.assignment %></td>
         <td><%= exercise.code %></td>
         <td><%= exercise.notes %></td>
-        <td><%= Date.today %></td>
+        <td><%= exercise.created_at.strftime("%b %d, %Y") %></td>
         <td><%= link_to 'Show', exercise %></td>
         <td><%= link_to 'Edit', edit_exercise_path(exercise) %></td>
         <td><%= link_to 'Delete', exercise, method: :delete, data: { confirm: 'Are you sure?' } %></td>

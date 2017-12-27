@@ -12,7 +12,7 @@ body {
 }
 
 .navbar {
-  background-image: linear-gradient(to bottom, #f7f7f7 0%,#eee 100%);
+  background-image: linear-gradient(to top, #990000 0%,#eee 100%);
   border: 1px solid #e5e5e5;
 }
 
@@ -25,5 +25,24 @@ body {
   .navbar-nav .nav-item {
     -ms-flex: 1 0 auto;
     flex: 1 0 auto;
+  }
+
+  .nav-link a {
+  color: DimGray;
+  font-family: 'Rambla', sans-serif;
+  }
+
+  .nav-link a {
+  color: Black;
+  }
+
+  a {
+  color: Black;
+  font-family: 'Rambla', sans-serif;
+  }
+
+  a:hover {
+  color: #990000;
+  text-decoration: none;
   }
 }

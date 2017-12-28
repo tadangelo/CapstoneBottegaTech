@@ -20,5 +20,5 @@
   <%= @exercise.created_at.strftime("%b %d, %Y") %>
 </p>
 
-<%= link_to 'Edit', edit_exercise_path(@exercise) %> |
+<%= link_to 'Edit', edit_exercise_path(@exercise) if logged_in?(:admin, :user) %> |
 <%= link_to 'Back', exercises_path %>

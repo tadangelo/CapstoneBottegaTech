@@ -22,8 +22,8 @@
         <td><%= exercise.notes %></td>
         <td><%= exercise.created_at.strftime("%b %d, %Y") %></td>
         <td><%= link_to 'Show', exercise %></td>
-        <td><%= link_to 'Edit', edit_exercise_path(exercise) %></td>
-        <td><%= link_to 'Delete', exercise, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_exercise_path(exercise) if logged_in?(:admin, :user) %></td>
+        <td><%= link_to 'Delete', exercise, method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:admin, :user) %></td>
       </tr>
     <% end %>
   </tbody>

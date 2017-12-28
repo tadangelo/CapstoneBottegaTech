@@ -1,6 +1,8 @@
 class ExercisesController < ApplicationController
 	before_action :set_exercise, only: [:show, :edit, :update, :destroy]
 	before_action :authenticate_user!
+	before_action :exercises_scope
+	access all: [:show, :index], user: :all, admin: :all
 
 
 	def index
@@ -58,5 +60,9 @@ class ExercisesController < ApplicationController
 		def exercise_params
 			params.require(:exercise).permit(:assignment, :code, :notes, :date)
 		end
+
+		def exercises_scope
+    		logged_in?(:user) ? Exercise : current_user.exercises
+  		end
 
 end

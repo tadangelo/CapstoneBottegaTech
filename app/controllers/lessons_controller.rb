@@ -1,5 +1,6 @@
 class LessonsController < ApplicationController
 	before_action :set_lesson, only: [:show, :edit, :update, :destroy]
+	access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, admin: :all
 
 	def index
 		@lessons = Lesson.all

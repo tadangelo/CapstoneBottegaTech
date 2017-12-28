@@ -1,2 +1,23 @@
-<h1>Pages#contact</h1>
-<p>Find me in app/views/pages/contact.html.erb</p>
+<pre id="editor">def contact
+  "If you have any questions please feel free to email ruby.code.tutorials@gmail.com.  All questions will be answered as quickly as possible.  We hope you have enjoyed learning to code in Ruby!!"
+end
+
+puts contact
+
+# Feel free to play with the code in this text editor.  It will highlight your code and you will be able to see how a text editor works and how it will give you different highlighting or text color depending on if your code is correct.  Don't worry once you leave this page it will go back to the contact page information so have fun.</pre>
+
+
+<div class="scrollmargin"></div>
+
+<script>
+  var editor = ace.edit("editor");
+  editor.setTheme("ace/theme/tomorrow_night_bright");
+  editor.session.setMode("ace/mode/ruby");
+  editor.setAutoScrollEditorIntoView(true);
+  editor.setOption("maxLines", 100);
+  editor.setOption("minLines", 10);
+  editor.getSession().setTabSize(2);
+  editor.setHighlightActiveLine(true);
+  editor.getSession().setUseSoftTabs(true);
+  editor.getSession().setUseWrapMode(true);
+</script>

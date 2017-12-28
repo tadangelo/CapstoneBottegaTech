@@ -1,5 +1,6 @@
 <%= form_with(model: exercise, local: true) do |form| %>
-
+  <%= form.hidden_field :user_id, value: current_user.id %>
+  
   <% if exercise.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(exercise.errors.count, "error") %> prohibited this file from being saved:</h2>
@@ -19,7 +20,7 @@
 
   <div class="field">
     <%= form.label :code %>
-    <%= form.text_area :code, id: :exercise_code %>
+    <%= form.text_area :code, as: :ace, id: :exercise_code %>
   </div>
 
   <div class="field">

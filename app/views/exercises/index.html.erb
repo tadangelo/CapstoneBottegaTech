@@ -1,61 +1,23 @@
-<hr>
-
 <p id="notice"><%= notice %></p>
 
 <h1>Ruby Exercises</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Assignment</th>
-      <th>Code</th>
-      <th>Notes</th>
-      <th>Date</th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @exercises.each do |exercise| %>
-      <tr>
-        <td><%= exercise.assignment %></td>
-        <td><%= exercise.code %></td>
-        <td><%= exercise.notes %></td>
-        <td><%= exercise.created_at.strftime("%b %d, %Y") %></td>
-        <td><%= link_to 'Show', exercise %></td>
-        <td><%= link_to 'Edit', edit_exercise_path(exercise) if logged_in?(:admin, :user) %></td>
-        <td><%= link_to 'Delete', exercise, method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:admin, :user) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New File', new_exercise_path %>
-
-<div class="container">
-<div class="col-md-12">
-    <h1>Alice in Wonderland, part dos</h1>
-    <p>'You ought to be ashamed of yourself for asking such a simple question,' added the Gryphon; and then they both sat silent and looked at poor Alice, who felt ready to sink into the earth. At last the Gryphon said to the Mock Turtle, 'Drive on, old fellow! Don't be all day about it!' and he went on in these words:
-    'Yes, we went to school in the sea, though you mayn't believe it—'
-    'I never said I didn't!' interrupted Alice.
-    'You did,' said the Mock Turtle.</p>
-    <div>
-<span class="badge">Posted 2012-08-02 20:47:04</span><div class="pull-right"><span class="label label-default">alice</span> <span class="label label-primary">story</span> <span class="label label-success">blog</span> <span class="label label-info">personal</span> <span class="label label-warning">Warning</span>
-<span class="label label-danger">Danger</span></div>         
-     </div>
-    <hr>
-    <h1>Revolution has begun!</h1>
-    <p>'I am bound to Tahiti for more men.'
-        'Very good. Let me board you a moment—I come in peace.' With that he leaped from the canoe, swam to the boat; and climbing the gunwale, stood face to face with the captain.
-        'Cross your arms, sir; throw back your head. Now, repeat after me. As soon as Steelkilt leaves me, I swear to beach this boat on yonder island, and remain there six days. If I do not, may lightning strike me!'A pretty scholar,' laughed the Lakeman. 'Adios, Senor!' and leaping into the sea, he swam back to his comrades.</p>
-    <div>
-        <span class="badge">Posted 2012-08-02 20:47:04</span><div class="pull-right"><span class="label label-default">alice</span> <span class="label label-primary">story</span> <span class="label label-success">blog</span> <span class="label label-info">personal</span> <span class="label label-warning">Warning</span>
-<span class="label label-danger">Danger</span></div>
-    </div>     
-    <hr>
-</div>
-</div>
+<%= link_to 'New Exercise', new_exercise_path %> |
+<%= link_to "Logout", destroy_user_session_path, method: :delete %>
 
 <hr>
+
+<% @exercises.each do |exercise| %>
+  <div class="container">
+    <div class="col-md-12">
+      <h3 class="exercise-assignment">Exercise: <%= link_to exercise.assignment.titleize, exercise %></h3>
+      <p>Code: <%= exercise.code %></p>
+      <p>Notes: <%= exercise.notes %></p>
+      <p>Date Created: <%= exercise.created_at.strftime("%b %d, %Y") %></p>
+      <td><%= link_to 'Edit', edit_exercise_path(exercise) if logged_in?(:admin, :user) %></td>
+      <td><%= link_to 'Delete', exercise, method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:admin, :user) %></td>
+    </div>
+    <hr>
+  </div>
+<% end %>
+<br>

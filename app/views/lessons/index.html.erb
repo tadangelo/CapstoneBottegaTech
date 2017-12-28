@@ -1,76 +1,22 @@
-<hr>
-
 <p id="notice"><%= notice %></p>
-
-<h1>Ruby Lessons</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Lesson Title</th>
-      <th>Body</th>
-      <th colspan="6"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @lessons.each do |lesson| %>
-      <tr>
-        <td><%= lesson.title %></td>
-        <td><%= lesson.body %></td>
-        <td><%= link_to 'Show', lesson %></td>
-        <td><%= link_to 'Edit', edit_lesson_path(lesson) if logged_in?(:admin) %></td>
-        <td><%= link_to 'Delete', lesson, method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:admin)%></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<%= link_to 'New Lesson', new_lesson_path if logged_in?(:admin) %>
+<br>
+<%= link_to "Logout", destroy_user_session_path, method: :delete if logged_in?(:admin) %>
 
 <br>
 
-<%= link_to 'New Lesson', new_lesson_path if logged_in?(:admin) %>
-
-<div class="container">
-    <div class="row">
-        <div class="span5">
-          <h4><a href="#">Lesson 1</a></h4>
-          <p>Overview of the course, prerequisites, instructor contact information, syllabus, location information</p>
-      </div>
-        <div class="span3">
-          Progress: <span class="pull-right strong">36%</span>
-          <div class="progress">
-                  <div class="bar" style="width: 36%;"></div>
-        </div>
-        </div>
-    </div>
-    <hr>
-     
-    <div class="row">
-      <div class="span5">
-          <h4><a href="#">Lesson 2</a></h4>
-          <p>Details about world history, geography of the ancient world, literature and resources</p>
-      </div>
-        <div class="span3">
-          Progress: <span class="pull-right strong">10%</span>
-          <div class="progress">
-                  <div class="bar" style="width: 10%;"></div>
-        </div>
-        </div>
-    </div>
-    <hr>
-     
-    <div class="row">
-      <div class="span5">
-          <h4><a href="#">Lesson 3</a></h4>
-          <p>Pop quiz on the material learned so far, reading of Socrates and watching a movie "Ancient Greece".</p>
-      </div>
-        <div class="span3">
-          Progress: <span class="pull-right strong">0%</span>
-          <div class="progress">
-                  <div class="bar" style="width: 0%;"></div>
-        </div>
-        </div>
-    </div>
-</div>
+<h1>Ruby Lessons</h1>
 
 <hr>
+
+  <% @lessons.each do |lesson| %>
+    <div class="container">
+      <div class="col-md-12">
+        <h3 class="lesson-title">Lesson: <%= link_to lesson.title.titleize, lesson %></h3>
+        <td><%= link_to 'Edit', edit_lesson_path(lesson) if logged_in?(:admin) %></td>
+        <td><%= link_to 'Delete', lesson, method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:admin)%></td>
+      </div>
+      <hr>
+    </div>
+  <% end %>
+<br>

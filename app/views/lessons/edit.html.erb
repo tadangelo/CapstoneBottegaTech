@@ -2,5 +2,5 @@
 
 <%= render 'form', lesson: @lesson %>
 
-<%= link_to 'Show', @lesson %> |
+<%= link_to 'Delete', @lesson, method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:admin)%>
 <%= link_to 'Back', lessons_path %>

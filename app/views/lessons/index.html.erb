@@ -3,19 +3,25 @@
 <%= link_to "Logout", destroy_user_session_path, method: :delete if logged_in?(:admin) %>
 
 <br>
+<div class="login">
+  <div class="container">
+    <div class="card">
+      <h1>Ruby Lessons</h1>
 
-<h1>Ruby Lessons</h1>
-
-<hr>
-
-  <% @lessons.each do |lesson| %>
-    <div class="container">
-      <div class="col-md-12">
-        <h3 class="lesson-title">Lesson: <%= link_to lesson.title.titleize, lesson %></h3>
-        <td><%= link_to 'Edit', edit_lesson_path(lesson) if logged_in?(:admin) %></td>
-        <td><%= link_to 'Delete', lesson, method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:admin)%></td>
-      </div>
       <hr>
-    </div>
-  <% end %>
+
+        <% @lessons.each do |lesson| %>
+          <div class="container">
+            <div class="col-md-12">
+              <h3 class="lesson-title">Lesson: <%= link_to lesson.title.titleize, lesson %></h3>
+              <td><%= link_to 'Edit', edit_lesson_path(lesson) if logged_in?(:admin) %></td>
+              <td><%= link_to 'Delete', lesson, method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:admin)%></td>
+            </div>
+            <hr>
+          </div>
+        <% end %>
+    </div>    
+  </div>
+</div>
+
 <br>

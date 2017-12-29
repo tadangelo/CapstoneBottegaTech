@@ -12,13 +12,13 @@
       </ul>
     </div>
   <% end %>
-  
+
   <div class="field">
     <%= form.label :assignment %>
     <%= form.text_field :assignment, id: :exercise_assignment %>
   </div>
-
-  <div class="editor">
+  
+  <div class="field">
     <%= form.label :code %>
     <%= form.text_area :code, id: :exercise_code %>
   </div>
@@ -31,4 +31,5 @@
   <div class="actions">
     <%= form.submit %>
   </div>
+    </form>
 <% end %>

@@ -5,7 +5,7 @@ class ExercisesController < ApplicationController
 
 
 	def index
-		@exercises = Exercise.where(user_id: current_user.id).all
+		@exercises = Exercise.where(user_id: current_user.id).page(params[:page]).per(5)
 	end
 
 	def show

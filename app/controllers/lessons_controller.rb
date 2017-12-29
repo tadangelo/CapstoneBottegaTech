@@ -3,7 +3,7 @@ class LessonsController < ApplicationController
 	access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, admin: :all
 
 	def index
-		@lessons = Lesson.all
+		@lessons = Lesson.page(params[:page]).per(10)
 	end
 
 	def show

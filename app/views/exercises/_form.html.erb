@@ -1,5 +1,4 @@
 <%= form_with(model: exercise, local: true) do |form| %>
-  <%= form.hidden_field :user_id, value: current_user.id %>
   
   <% if exercise.errors.any? %>
     <div id="error_explanation">

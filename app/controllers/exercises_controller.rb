@@ -20,7 +20,7 @@ class ExercisesController < ApplicationController
 	end
 
 	def create
-		@exercise = Exercise.new(exercise_params)
+		@exercise = current_user.exercises.create!(exercise_params)
 
     respond_to do |format|
       if @exercise.save

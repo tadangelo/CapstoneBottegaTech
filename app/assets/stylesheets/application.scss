@@ -84,3 +84,15 @@ a:hover {
   justify-content: center;
   align-items: center;
 }
+
+.print {
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  align-items: center;
+}
+
+.print_link {
+  display: flex;
+  justify-content: center;
+}

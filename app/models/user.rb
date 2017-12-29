@@ -14,4 +14,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :exercises
+
+  validates_presence_of :name
 end

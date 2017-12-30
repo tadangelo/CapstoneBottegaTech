@@ -4,7 +4,7 @@
 <br>
 <p>
   <strong>Title:</strong>
-  <%= @lesson.title %>
+  <%= @lesson.title.titleize %>
 </p>
 
 <p>
@@ -12,8 +12,11 @@
 <%= markdown @lesson.body %>
 </p>
 
+
 <%= link_to 'Edit', edit_lesson_path(@lesson) if logged_in?(:admin) %></br>
-<%= link_to 'Back', lessons_path %>
+<%= link_to "Next Lesson", @lesson.next %>
+<br>
+<%= link_to 'Back to Lessons', lessons_path %>
 
 <!-- <br>
 

@@ -1,4 +1,5 @@
 <%= link_to 'New Lesson', new_lesson_path if logged_in?(:admin) %>
+<%= link_to "Logout", destroy_user_session_path, method: :delete if logged_in?(:admin) %>
 
 <br>
 <div class="login">
@@ -19,7 +20,6 @@
           </div>
         <% end %>
         <%= link_to 'Certificate', certificate_path if Lesson.last if logged_in?(:admin, :user) %>
-        <%= paginate @lessons %>
     </div>    
   </div>
 </div>

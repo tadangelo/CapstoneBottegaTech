@@ -10,7 +10,12 @@
     <div class="jumbotron">
       <h1>Welcome to Ruby Tutorials!!!</h1>
       <p class="lead">This application was made specifically to teach Ruby programming language basics.  You can access lessons at any time.  If you want to be able to save your code and go back to it at a later time please feel free to register with us and create a login.</p>
-      <a class="btn btn-large btn-secondary" href="/register">Sign Up Today</a>
+      <% if logged_in?(:admin, :user) %>
+        <a class="btn btn-large btn-secondary" href="/lessons">Lessons</a>
+      <% else %>
+        <a class="btn btn-large btn-secondary" href="/register">Sign Up Today</a>
+      <% end %>
+
     </div>
 
     <hr>

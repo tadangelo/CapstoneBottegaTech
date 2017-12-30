@@ -9,7 +9,7 @@
 
 <p>
  <strong>Body:</strong>
-<%= markdown @lesson.body %> 
+<%= markdown @lesson.body %>
 </p>
 
 <%= link_to 'Edit', edit_lesson_path(@lesson) if logged_in?(:admin) %></br>

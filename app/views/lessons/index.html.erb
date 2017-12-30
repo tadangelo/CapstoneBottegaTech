@@ -20,7 +20,7 @@
             <hr>
           </div>
         <% end %>
-        <%= link_to 'Certificate', certificate_path if current_page?(params[:lesson_last]) if logged_in?(:admin, :user)%>
+        <%= link_to 'Certificate', certificate_path if Lesson.last if logged_in?(:admin, :user) %>
         <%= paginate @lessons %>
     </div>    
   </div>

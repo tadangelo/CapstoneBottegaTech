@@ -11,7 +11,9 @@
       <h1>Welcome to Ruby Tutorials!!!</h1>
       <p class="lead">This application was made specifically to teach Ruby programming language basics.  You can access lessons at any time.  If you want to be able to save your code and go back to it at a later time please feel free to register with us and create a login.</p>
       <% if logged_in?(:admin, :user) %>
-        <a class="btn btn-large btn-secondary" href="/lessons">Lessons</a>
+        <a class="btn btn-large btn-secondary" href="/edit">Edit Your Login</a>
+        <br>
+        <a class="btn btn-large btn-secondary" <%= link_to "Logout", destroy_user_session_path, method: :delete %></a>
       <% else %>
         <a class="btn btn-large btn-secondary" href="/register">Sign Up Today</a>
       <% end %>

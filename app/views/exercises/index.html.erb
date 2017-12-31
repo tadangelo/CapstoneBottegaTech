@@ -1,22 +1,31 @@
-<h1>Ruby Exercises</h1>
-
-<%= link_to 'New Exercise', new_exercise_path %> | 
-<%= link_to "Logout", destroy_user_session_path, method: :delete %>
+<div class="container">
+  <div class="col-md-12">
+    <div class="jumbotron">
+      <h1>Ruby Exercises</h1>
+        <%= link_to 'New Exercise', new_exercise_path %>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+    </div>
+  </div>
+</div>
 
 <hr>
 
+
+
 <% @exercises.each do |exercise| %>
   <div class="container">
-    <div class="col-md-12">
-      <h3 class="exercise-assignment">Exercise: <%= link_to exercise.assignment.titleize, exercise %></h3>
-      <p>Code: <%= exercise.code %></p>
-      <p>Notes: <%= exercise.notes %></p>
-      <p>Date Created: <%= exercise.created_at.strftime("%b %d, %Y") %></p>
-      <td><%= link_to 'Edit', edit_exercise_path(exercise) if logged_in?(:admin, :user) %></td>
-      <td><%= link_to 'Delete', exercise, method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:admin, :user) %></td>
-    </div>
-    <hr>
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Exercise: <%= link_to exercise.assignment.titleize, exercise %></h3>
+        <p>Date Created: 
+        <br><%= exercise.created_at.strftime("%b %d, %Y") %></p>
+        <%= link_to 'Delete', exercise, method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:admin, :user) %>
+      </div><!--/span-->
+    </div><!--/row-->
+      <hr>
   </div>
 <% end %>
+
+
 <%= paginate @exercises %>
 <br>

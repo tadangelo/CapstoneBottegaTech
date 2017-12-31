@@ -22,7 +22,7 @@ class ExercisesController < ApplicationController
 	def create
 		@exercise = current_user.exercises.create!(exercise_params)
 
-    respond_to do |format|
+    	respond_to do |format|
       if @exercise.save
         format.html { redirect_to @exercise, notice: 'Your file was created'}
       else

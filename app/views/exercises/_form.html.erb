@@ -12,22 +12,22 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :assignment %>
-    <%= form.text_field :assignment, id: :exercise_assignment %>
+  <div class="form-group">
+    <%= form.text_field :assignment, id: :exercise_assignment, class: 'form-control', placeholder: 'Code Exercise Title' %>
   </div>
   
-  <div class="field">
-    <%= form.label :code %>
-    <%= form.text_area :code, id: :exercise_code %>
+  <div class="form-group">
+    <%= form.text_area :code, id: :exercise_code, class: 'form-control', rows: 15, placeholder: '```
+    Your Code Here
+``` 
+(Include three back ticks before and after your code as shown here to save it with the correct syntax.  Back ticks are on the button between tab and esc on a regular keyboard)' %>
   </div>
 
-  <div class="field">
-    <%= form.label :notes %>
-    <%= form.text_area :notes, id: :exercise_notes %>
+  <div class="form-group">
+    <%= form.text_area :notes, id: :exercise_notes, class: 'form-control', rows: 15, placeholder: 'Your Notes Here' %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group">
+    <%= form.submit "Submit", class: 'btn btn-secondary' %>
   </div>
 <% end %>

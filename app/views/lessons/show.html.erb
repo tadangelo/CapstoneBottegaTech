@@ -1,17 +1,14 @@
-<iframe frameborder="0" width="100%" height="500px" src="https://codepad.remoteinterview.io/EUYHSGDLXD"></iframe>
+<div class="container">
+	<iframe frameborder="0" width="100%" height="500px" src="https://codepad.remoteinterview.io/EUYHSGDLXD"></iframe>
 
-<br>
-<br>
-<p>
-  <strong>Title:</strong>
-  <%= @lesson.title.titleize %>
-</p>
-
-<p>
- <strong>Body:</strong>
-<%= markdown @lesson.body %>
-</p>
-
+	<hr>
+	<div class="card-lessons">
+		<h1><%= @lesson.title.titleize %></h1>
+		<p>
+		<%= markdown @lesson.body %>
+		</p>
+	</div>
+</div>
 
 <%= link_to 'Edit', edit_lesson_path(@lesson) if logged_in?(:admin) %></br>
 <%= link_to "Next Lesson", @lesson.next %>

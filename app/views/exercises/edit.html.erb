@@ -1,6 +1,8 @@
-<h1>Editing Your File</h1>
+<div class="container">
+	<h1>Editing Your File</h1>
 
-<%= render 'form', exercise: @exercise %>
+	<%= render 'form', exercise: @exercise %>
 
-<%= link_to 'Delete', @exercise, method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:admin, :user) %>
-<%= link_to 'Back', exercises_path %>
+	<%= link_to 'Delete', @exercise, method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:admin, :user) %>
+	<%= link_to 'Back', exercises_path %>
+</div>

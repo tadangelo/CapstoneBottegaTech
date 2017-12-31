@@ -1,23 +1,16 @@
-<p>
-  <strong>Assignment:</strong>
-  <%= @exercise.assignment %>
-</p>
+<div class="container">
+	<div class="exercise-post">
+    <h2 class="exercise-post-title"><%= @exercise.assignment.titleize %></h2>
+    	<p class="exercise-post-date"><%= @exercise.created_at.strftime("%b %d, %Y") %></p>
 
-<p>
-  <strong>Code:</strong>
-	<%= @exercise.code %>
-
-</p>
-
-<p>
-  <strong>Notes:</strong>
-  <%= @exercise.notes %>
-</p>
-
-<p>
-  <strong>Date:</strong>
-  <%= @exercise.created_at.strftime("%b %d, %Y") %>
-</p>
-
+    	<h4>Code:</h4> 
+    	<p><%= markdown @exercise.code %></p>
+    	<hr>
+    	<h5>Notes:</h5>
+    	<p><%= @exercise.notes %></p>
+    	<hr>
+  </div>
 <%= link_to 'Edit', edit_exercise_path(@exercise) if logged_in?(:admin, :user) %> |
+ <%= link_to 'Delete', @exercise, method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:admin, :user) %>
+<hr>
 <%= link_to 'Back', exercises_path %>

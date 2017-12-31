@@ -61,5 +61,6 @@ gem 'dangelo_view_tool', '~> 0.1.0'
 gem 'kaminari', '~> 1.1', '>= 1.1.1'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
 gem 'bourbon', '~> 4.3', '>= 4.3.4'
+gem 'rails_12factor', '~> 0.0.3'
 
 ruby "2.4.1"

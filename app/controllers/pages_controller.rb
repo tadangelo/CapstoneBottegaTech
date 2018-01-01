@@ -8,6 +8,9 @@ class PagesController < ApplicationController
   def ruby
   end
 
+  def resources
+  end
+
   def contact
   end
 

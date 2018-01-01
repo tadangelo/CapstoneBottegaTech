@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   get 'contact', to: 'pages#contact'
 
+  get 'resources', to: 'pages#resources'
+
   get 'certificate', to: 'pages#certificate'
 
   root to: 'pages#home'

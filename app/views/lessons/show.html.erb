@@ -4,9 +4,9 @@
 		<p>
 		<%= markdown @lesson.body %>
 		</p>
-		<hr>
-		<iframe frameborder="0" width="100%" height="500px" src="https://codepad.remoteinterview.io/EUYHSGDLXD"></iframe>
 	</div>
+	<br>
+	<iframe frameborder="0" width="100%" height="500px" src="https://codepad.remoteinterview.io/EUYHSGDLXD"></iframe>
 </div>
 
 <%= link_to 'Edit', edit_lesson_path(@lesson) if logged_in?(:admin) %></br>

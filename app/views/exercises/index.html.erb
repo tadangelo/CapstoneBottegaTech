@@ -1,4 +1,4 @@
-<br>
+<hr>
 <div class="login">
   <div class="container">
     <div class="card">
@@ -17,11 +17,11 @@
               <%= link_to 'Delete', exercise, method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:admin, :user) %>
             </div><!--/span-->
           </div><!--/row-->
-              <hr>
+          <hr>
         <% end %>
     </div>
   </div>
 </div>
 
 <%= paginate @exercises %>
-<br>
+<hr>

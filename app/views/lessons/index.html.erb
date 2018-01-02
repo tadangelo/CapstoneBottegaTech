@@ -1,4 +1,4 @@
-<br>
+<hr>
 <div class="login">
   <div class="container">
     <div class="card">
@@ -15,11 +15,11 @@
               <td><%= link_to 'Edit', edit_lesson_path(lesson) if logged_in?(:admin) %></td>
               <td><%= link_to 'Delete', lesson, method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:admin)%></td>
             </div>
-            <hr>
           </div>
+          <hr>
         <% end %>
         <%= link_to 'Certificate', certificate_path if Lesson.last if logged_in?(:admin, :user) %>
-    </div>    
-  </div>
+    </div>
+  </div>    
 </div>
-<br>
+<hr>

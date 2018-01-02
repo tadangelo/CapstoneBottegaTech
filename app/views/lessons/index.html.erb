@@ -1,11 +1,10 @@
-<%= link_to 'New Lesson', new_lesson_path if logged_in?(:admin) %>
-<%= link_to "Logout", destroy_user_session_path, method: :delete if logged_in?(:admin) %>
-
 <br>
 <div class="login">
   <div class="container">
     <div class="card">
       <h1>Ruby Lessons</h1>
+      <%= link_to 'New Lesson', new_lesson_path if logged_in?(:admin) %>
+      <%= link_to "Logout", destroy_user_session_path, method: :delete if logged_in?(:admin) %>
 
       <hr>
 

@@ -19,4 +19,10 @@ module LessonsHelper
     markdown_to_html.render(text).html_safe
   end
 
+  def lesson_next
+    if @lesson.next
+      link_to "Next Lesson", @lesson.next
+    end
+  end
+
 end

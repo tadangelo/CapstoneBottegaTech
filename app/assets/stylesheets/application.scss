@@ -111,3 +111,10 @@ a:hover {
   align-items: center;
   padding: 20px;
 }
+
+.credit-card h4, p {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 20px;
+}

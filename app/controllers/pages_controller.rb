@@ -16,4 +16,7 @@ class PagesController < ApplicationController
 
   def certificate
   end
+
+  def credits
+  end
 end

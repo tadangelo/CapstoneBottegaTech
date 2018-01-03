@@ -1,3 +1,113 @@
-// Place all the styles related to the Lessons controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap";
+@import "font-awesome";
+@import "bourbon";
+
+body {
+  padding-top: 10px;
+}
+
+.navbar {
+  background-image: linear-gradient(to bottom, Gray 0%, LightGray 100%);
+}
+
+@media (min-width: 768px) {
+  .navbar-nav {
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+.navbar-nav .nav-item {
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+  }
+
+.nav-link a {
+  color: DimGray;
+  font-family: 'Rambla', sans-serif;
+  }
+
+.nav-link a {
+  color: Black;
+  }
+
+a {
+  color: Black;
+  font-family: 'Rambla', sans-serif;
+  }
+
+a:hover {
+  color: #990000;
+  text-decoration: none;
+  }
+}
+
+.jumbotron {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: LightGray;
+  color: #990000;
+}
+
+.mastfoot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; 
+}
+
+.ruby_image {
+  -webkit-animation:spin 4s linear infinite;
+  -moz-animation:spin 4s linear infinite;
+  animation:spin 4s linear infinite;
+
+  @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+  @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+  @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.card {
+  background-color: LightGray;
+  color: #990000;
+}
+
+.lessons {
+  background-color: LightGray;
+  color: #990000;
+  padding: 10px;
+}
+.pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.print {
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  align-items: center;
+  font-family: 'Great Vibes', cursive;
+}
+
+.print_link {
+  display: flex;
+  justify-content: center;
+}
+
+.card-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}

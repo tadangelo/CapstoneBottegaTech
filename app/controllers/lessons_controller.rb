@@ -4,6 +4,7 @@ class LessonsController < ApplicationController
 
 	def index
 		@lessons = Lesson.all
+		Lesson.order('id ASC')
 	end
 
 	def show

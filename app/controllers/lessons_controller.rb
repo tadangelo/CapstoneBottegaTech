@@ -3,8 +3,7 @@ class LessonsController < ApplicationController
 	access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, admin: :all
 
 	def index
-		@lessons = Lesson.all
-		Lesson.order('id ASC')
+		@lessons = Lesson.all.order('id ASC')
 	end
 
 	def show

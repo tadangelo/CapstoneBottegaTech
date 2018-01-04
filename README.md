@@ -15,6 +15,7 @@
 - Registered users can practice and save their code
 - User can only see their own saved code/exercises
 - User Certificate is personalized with name and date
+- Add validations so only Admin can add, edit, or delete lessons
 - Built out text editors throughout the site that users can use
 - Resources page with additional links to click that will open another tab with those resources
 - Credits page that adheres to open source licensing 
